@@ -25,9 +25,11 @@ app.use(express.json());
 //                 ROUTE MOUNTING
 // ======================================================
 
-// TODO: mount route-related endpoints.
+// Mount route-related endpoints.
+app.use("/api/routes", routeRoutes);
 
-// TODO: mount aircraft-related endpoints.
+// Mount aircraft-related endpoints.
+app.use("/api/aircraft", aircraftRoutes);
 
 // Mount airport-related endpoints.
 app.use("/api/airports", airportRoutes);
