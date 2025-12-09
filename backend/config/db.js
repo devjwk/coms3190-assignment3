@@ -35,7 +35,7 @@ export async function connectDB() {
     // Select the "skyvalor" database
     db = client.db('skyvalor');
 
-    console.log("✅ Successfully connected to MongoDB");
+    console.log("Successfully connected to MongoDB");
 
     // Add graceful shutdown
     process.on('SIGINT', async () => {
@@ -46,7 +46,7 @@ export async function connectDB() {
 
     return db;
   } catch (error) {
-    console.error("❌ Failed to connect to MongoDB:", error);
+    console.error("Failed to connect to MongoDB:", error);
     process.exit(1); // Terminate the application on DB connection failure
   }
 }

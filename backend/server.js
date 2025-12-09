@@ -34,10 +34,6 @@ app.use("/api/aircraft", aircraftRoutes);
 // Mount airport-related endpoints.
 app.use("/api/airports", airportRoutes);
 
-app.get("/", (req, res) => {
-  res.send("SkyValor API is running");
-});
-
 // ======================================================
 //        KEEP: SEARCH ROUTE BY FLIGHT ID
 // ======================================================
@@ -109,6 +105,6 @@ const PORT = process.env.PORT || 8081; // <==== DO NOT CHANGE THE PORT FROM 8081
 // TODO: connect to MongoDB before starting server.
 connectDB().then(() => {
   app.listen(PORT, () => {
-    console.log(`🚀 Server running at http://localhost:${PORT}`);
+    console.log(`Server running at http://localhost:${PORT}`);
   });
 });
