@@ -17,7 +17,16 @@ export async function getAllRoutes(req, res) {
 export async function getRouteById(req, res) {
   try {
     const db = getDB();
-    const route = await db.collection("routes").findOne({ _id: new ObjectId(req.params.id) });
+    const routeId = req.params.id;
+
+    // Check if routeId is a valid ObjectId string (24-character hex string)
+    const isValidObjectId = /^[0-9a-fA-F]{24}$/.test(routeId);
+
+    if (!isValidObjectId) {
+      return res.status(400).json({ error: "Invalid route ID format" });
+    }
+
+    const route = await db.collection("routes").findOne({ _id: new ObjectId(routeId) });
 
     if (!route) {
       return res.status(404).json({ error: "Route not found" });
@@ -57,9 +66,20 @@ export async function updateRoute(req, res) {
     const db = getDB();
     const routeId = req.params.id;
 
+    // Check if routeId is a valid ObjectId string (24-character hex string)
+    const isValidObjectId = /^[0-9a-fA-F]{24}$/.test(routeId);
+
+    if (!isValidObjectId) {
+      return res.status(400).json({ error: "Invalid route ID format" });
+    }
+
+    // Create a copy of the request body and remove the _id field to prevent updating the immutable field
+    const updateData = { ...req.body };
+    delete updateData._id;
+
     const result = await db.collection("routes").updateOne(
       { _id: new ObjectId(routeId) },
-      { $set: req.body }
+      { $set: updateData }
     );
 
     if (result.matchedCount === 0) {
@@ -79,6 +99,13 @@ export async function deleteRoute(req, res) {
   try {
     const db = getDB();
     const routeId = req.params.id;
+
+    // Check if routeId is a valid ObjectId string (24-character hex string)
+    const isValidObjectId = /^[0-9a-fA-F]{24}$/.test(routeId);
+
+    if (!isValidObjectId) {
+      return res.status(400).json({ error: "Invalid route ID format" });
+    }
 
     const result = await db.collection("routes").deleteOne({ _id: new ObjectId(routeId) });
 

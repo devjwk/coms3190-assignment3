@@ -20,6 +20,7 @@ export default function RouteForm({ initial, mode, onSubmit, onCancel }) {
   const [aircrafts, setAircrafts] = useState([]);
   const [filteredAircraft, setFilteredAircraft] = useState([]);
   const [routeFound, setRouteFound] = useState(null);
+  const [routeId, setRouteId] = useState(null); // Store the MongoDB ObjectId
   const [searchInput, setSearchInput] = useState("");
   const [searchStatus, setSearchStatus] = useState(null);
 
@@ -35,6 +36,7 @@ export default function RouteForm({ initial, mode, onSubmit, onCancel }) {
     }
 
     setRouteFound(data._id);
+    setRouteId(data._id); // Store the MongoDB ObjectId
 
     // Autofill form
     setForm({
@@ -170,6 +172,11 @@ export default function RouteForm({ initial, mode, onSubmit, onCancel }) {
       from: fromData,
       to: toData,
     };
+
+    // Include the MongoDB ObjectId for updates
+    if (mode === "edit" && routeId) {
+      payload._id = routeId;
+    }
 
     // Only close if backend succeeded
     onSubmit(payload);
