@@ -1,15 +1,11 @@
 <div align="center">
 
-# SKYVALOR OPERATIONS CONSOLE
+<img src="assets/banner.svg" alt="SKYVALOR OPERATIONS CONSOLE — The API behind an airline operations dashboard" width="100%">
 
-### The API behind an airline operations dashboard
-
-**Node.js · Express · MongoDB**
-
-![Server](https://img.shields.io/badge/Server-Express-6366F1?style=flat-square)
-![Database](https://img.shields.io/badge/Database-MongoDB-0F172A?style=flat-square)
-![Frontend](https://img.shields.io/badge/Frontend-React%20%C2%B7%20provided-0891B2?style=flat-square)
-![Team](https://img.shields.io/badge/Team-2%20people-F59E0B?style=flat-square)
+![Server](https://img.shields.io/badge/Server-Express-0369A1?style=flat-square&labelColor=0C4A6E)
+![Database](https://img.shields.io/badge/Database-MongoDB-0C4A6E?style=flat-square&labelColor=0C4A6E)
+![Frontend](https://img.shields.io/badge/Frontend-React%20%C2%B7%20provided-0284C7?style=flat-square&labelColor=0C4A6E)
+![Team](https://img.shields.io/badge/Team-2%20people-B45309?style=flat-square&labelColor=0C4A6E)
 
 Iowa State University · COM S 3190 · Assignment 3 · Fall 2025
 
@@ -40,6 +36,7 @@ See [`backend/README.md`](backend/README.md) for setup and the full endpoint lis
 ## Architecture
 
 ```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#0369A1", "primaryTextColor": "#ffffff", "primaryBorderColor": "#0C4A6E", "lineColor": "#94A3B8", "secondaryColor": "#0284C7", "tertiaryColor": "#0C4A6E", "clusterBkg": "#F8FAFC", "clusterBorder": "#94A3B8", "edgeLabelBackground": "#F1F5F9", "fontFamily": "ui-sans-serif, system-ui, sans-serif"}}}%%
 flowchart LR
     F["React frontend · provided"] -->|"/api/routes"| R["Route controller"]
     F -->|"/api/aircraft"| A["Aircraft controller"]
@@ -47,7 +44,7 @@ flowchart LR
     R --> M[("MongoDB · skyvalor")]
     A --> M
     P --> M
-    style A fill:#6366F1,color:#ffffff,stroke:#4338CA
+    style A fill:#FDE68A,color:#0B1220,stroke:#0C4A6E
 ```
 
 The highlighted controller is the one I finished.
