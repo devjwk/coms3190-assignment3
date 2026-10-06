@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 280" role="img" aria-label="SKYVALOR OPERATIONS CONSOLE">
+<title>SKYVALOR OPERATIONS CONSOLE</title>
+<style>
+.kick{font:700 15px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;letter-spacing:3px;fill:#FDE68A}
+.title{font:800 38px system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;letter-spacing:1.5px;fill:#ffffff}
+.tag{font:500 21px system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;fill:#ffffff;opacity:.86}
+.m{font:500 13px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace} .mb{font:700 14px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace} .mbig{font:800 20px system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif} .big{font:800 30px system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif} .term{font:500 15px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+.bar{fill:#FDE68A}
+@keyframes dash{to{stroke-dashoffset:-32}} .loop{animation:dash 1.6s linear infinite}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0C4A6E"/><stop offset="1" stop-color="#0284C7"/></linearGradient></defs>
+<rect width="1200" height="280" rx="20" fill="url(#g)"/>
+<rect class="bar" x="64" y="62" width="44" height="5" rx="2.5"/>
+<text x="64" y="100" class="kick">NODE.JS · EXPRESS · MONGODB</text>
+<text x="64" y="166" class="title">SKYVALOR OPERATIONS CONSOLE</text>
+<text x="64" y="208" class="tag">The API behind an airline operations dashboard</text>
+<g transform="translate(810,50)"><path d="M20 140 Q170 -40 320 120" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-dasharray="8 8" opacity=".75" class="loop"/><circle cx="20" cy="140" r="9" fill="#FDE68A"/><circle cx="320" cy="120" r="9" fill="#FDE68A"/><text x="20" y="168" class="mb" text-anchor="middle" fill="#fff">DSM</text><text x="320" y="148" class="mb" text-anchor="middle" fill="#fff">ORD</text><g transform="translate(172,50) rotate(8)"><path d="M-22 0 L18 -6 L26 0 L18 6 Z" fill="#ffffff"/><path d="M-4 -2 L-14 -20 L-6 -20 L8 -3 Z M-4 2 L-14 20 L-6 20 L8 3 Z" fill="#ffffff"/><path d="M-20 -1 L-26 -10 L-21 -10 L-14 -1 Z" fill="#ffffff"/></g></g>
+</svg>
