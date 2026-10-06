@@ -1,6 +1,27 @@
-# SkyValor Operations Console (COM S 3190, Assignment 3)
+<div align="center">
 
-A REST backend for an airline operations dashboard: routes, aircraft and airports stored in MongoDB and served to a React frontend.
+# SKYVALOR OPERATIONS CONSOLE
+
+### The API behind an airline operations dashboard
+
+**Node.js · Express · MongoDB**
+
+![Server](https://img.shields.io/badge/Server-Express-6366F1?style=flat-square)
+![Database](https://img.shields.io/badge/Database-MongoDB-0F172A?style=flat-square)
+![Frontend](https://img.shields.io/badge/Frontend-React%20%C2%B7%20provided-0891B2?style=flat-square)
+![Team](https://img.shields.io/badge/Team-2%20people-F59E0B?style=flat-square)
+
+Iowa State University · COM S 3190 · Assignment 3 · Fall 2025
+
+[Overview](#overview) · [Architecture](#architecture) · [My role](#my-role) · [Results](#results) · [Limitations](#limitations-and-next-steps)
+
+</div>
+
+---
+
+> **Where it stands — Complete**  
+> The provided React interface works end to end against our backend.  
+> Verification was manual; there are no automated tests.
 
 | | |
 |---|---|
@@ -15,6 +36,21 @@ A REST backend for an airline operations dashboard: routes, aircraft and airport
 - **What we built:** an Express server with controllers and routers for routes, aircraft and airports under `/api`, backed by a shared MongoDB connection.
 
 See [`backend/README.md`](backend/README.md) for setup and the full endpoint list, and [`frontend/README.md`](frontend/README.md) for the provided UI.
+
+## Architecture
+
+```mermaid
+flowchart LR
+    F["React frontend · provided"] -->|"/api/routes"| R["Route controller"]
+    F -->|"/api/aircraft"| A["Aircraft controller"]
+    F -->|"/api/airports"| P["Airport controller"]
+    R --> M[("MongoDB · skyvalor")]
+    A --> M
+    P --> M
+    style A fill:#6366F1,color:#ffffff,stroke:#4338CA
+```
+
+The highlighted controller is the one I finished.
 
 ## My role
 
